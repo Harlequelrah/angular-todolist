@@ -10,9 +10,6 @@ import { Todo } from '../../../models/todo';
   styleUrl: './todo-list.component.scss'
 })
 export class TodoListComponent implements OnInit {
-  myFirstTodo!: Todo;
-  mySecondTodo!: Todo;
-  myThirdTodo!: Todo;
   myTodos!: Todo[];
   ngOnInit(): void {
     this.myTodos = [
@@ -40,24 +37,24 @@ export class TodoListComponent implements OnInit {
         new Date()
       ),
       new Todo(
-        1,
-        "Learning Angular",
+        4,
+        "Learning TypeScript",
         "I am now learning angular",
         false,
         new Date(),
         new Date(),
       ),
       new Todo(
-        2,
-        "Strike The blood",
-        "Finir l'animé Strike The blood",
+        5,
+        "Bleach",
+        "Finir l'animé Bleach",
         true,
         new Date(),
         new Date()
       ),
       new Todo(
-        3,
-        "Continue TOEIC",
+        6,
+        "Apprendre Spring boot",
         "End my TOEIC courses in Global Exam",
         false,
         new Date()

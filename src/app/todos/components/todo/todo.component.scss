@@ -11,8 +11,7 @@
 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    // background-color: #ffffff;
-    background-color: #ff9999;
+    background-color: #ffffff;
  transition: transform 0.2s;
 
     &:hover {
@@ -36,7 +35,10 @@
     p {
         font-size: 0.9em;
         color: #666;
-        color: lightgray
+    }
+    button{
+        border-radius:4px;
+        width:300px;
     }
 }
 
