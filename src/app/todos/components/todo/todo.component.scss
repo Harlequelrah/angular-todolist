@@ -1,28 +1,45 @@
 .todo-card {
-    border-radius: 8px; /* Arrondit les coins de la carte */
-    width: 300px; /* Largeur de la carte */
-    height: auto; /* Hauteur automatique pour s'adapter au contenu */
-    padding: 16px; /* Ajoute un espace intérieur */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour donner un effet de profondeur */
-    background-color: #ffffff; /* Couleur de fond de la carte */
-    transition: transform 0.2s; /* Ajoute une transition pour l'effet de survol */
+    border-radius: 8px;
+
+    width: 300px;
+
+    height: auto;
+
+    padding: 16px;
+
+    margin: 5px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    // background-color: #ffffff;
+    background-color: #ff9999;
+ transition: transform 0.2s;
+
+    &:hover {
+        background-color: bisque;
+        transform: translateY(-5px);
+    }
+
+    h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+
+        font-size: 1.2em;
+
+        margin-bottom: 10px;
+
+    }
+
+    p {
+        font-size: 0.9em;
+        color: #666;
+        color: lightgray
+    }
 }
 
-.todo-card:hover {
-    transform: translateY(-5px); /* Légèrement soulève la carte au survol */
-}
-
-.todo-card h1 {
-    font-size: 1.5em; /* Taille de police pour le titre */
-    margin-bottom: 10px; /* Espace en bas du titre */
-}
-
-.todo-card h2 {
-    font-size: 1.2em; /* Taille de police pour la description */
-    margin-bottom: 10px; /* Espace en bas de la description */
-}
-
-.todo-card p {
-    font-size: 0.9em; /* Taille de police pour les dates */
-    color: #666; /* Couleur de texte pour les dates */
+.todo-card-is-done {
+    background-color: greenyellow;
 }

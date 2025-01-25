@@ -1,8 +1,14 @@
-<div class="todo-card">
+<div class="todo-card" [ngClass]="{'todo-card-is-done':todo.est_fini}">
   <h1> Todo {{todo.id}} : {{todo.titre}}</h1>
   <h2>{{todo.description}}</h2>
-  <p>
+  <p [ngStyle]="{'color' : todo.date_modification ? 'pink':'purple' }">
+    <!-- <p> -->
     date de creation {{todo.date_creation}}
-    date de modification {{todo.date_modification}}
   </p>
+  @if(todo.date_modification){
+      <p>
+        date de modification {{todo.date_modification}}
+      </p>
+  }
+
 </div>

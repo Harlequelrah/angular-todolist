@@ -1,5 +1,7 @@
 <div class="todo-container">
-  <app-todo [todo]="myFirstTodo" />
-  <app-todo [todo]="mySecondTodo" />
-  <app-todo [todo]="myThirdTodo" />
+  @for(todo of myTodos; track todo.id){
+  <app-todo [todo]="todo" />
+  }
+
+
 </div>

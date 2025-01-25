@@ -4,8 +4,10 @@ export class Todo {
         public id: number,
         public titre: string,
         public description: string,
+        public est_fini: boolean,
         public date_creation: Date,
         public date_modification?: Date
+
     ) {}
 
 }
