@@ -1,33 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
 import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { Todo } from '../../../core/models/todo';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-todo',
   standalone: true,
-  imports: [NgStyle,NgClass,TitleCasePipe,DatePipe],
+  imports: [NgClass,TitleCasePipe],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss'
 })
-export class TodoComponent implements OnInit {
+export class TodoComponent  {
 
 
+constructor(private router:Router){}
 
   @Input() todo!: Todo;
-  button_text!: "Commencer" | "Finir"
-
-  ngOnInit(): void {
-    this.button_text = this.todo.est_fini ? "Commencer" : "Finir"
+  OnViewTodo() {
+    this.router.navigateByUrl(`/todos/${this.todo.id}`);
   }
-  OnChangeStatut() :void {
-    this.todo.est_fini = !this.todo.est_fini
-    if (this.todo.est_fini) {
-      this.button_text="Commencer"
-    }
-    else {
-      this.button_text="Finir"
-    }
-  }
-
-
 }

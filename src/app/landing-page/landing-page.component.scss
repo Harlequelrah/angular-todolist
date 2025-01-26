@@ -1,0 +1,50 @@
+.landing-container {
+
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    .landing-content {
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        padding: 16px;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, .2);
+
+
+        p {
+            font-size: 36px;
+        }
+
+        .landing-content__button {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            button {
+                color: #333;
+                border: none;
+                outline: none;
+                padding: 4px;
+                font-size: 0.8em;
+                border: 2px solid rgba(0, 0, 0, .2);
+                margin-bottom: 4px;
+                transition: transform 0.2s;
+
+                &:hover {
+                    text-decoration:underline;
+                    font-size: 1.0em;
+                    transform: translateX(5px);
+                    color:#666;
+                }
+
+            }
+
+        }
+    }
+
+
+}

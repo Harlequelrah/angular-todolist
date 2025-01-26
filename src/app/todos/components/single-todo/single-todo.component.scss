@@ -1,0 +1,51 @@
+.todo-container {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    .todo-card {
+        display:flex;
+        flex-direction: column;
+        border-radius: 8px;
+
+        width: 300px;
+
+        height: auto;
+
+        padding: 16px;
+
+        margin: 5px;
+
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+        background-color: #ffffff;
+        transition: transform 0.2s;
+
+        &:hover {
+            background-color: bisque;
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+
+            font-size: 1.2em;
+
+            margin-bottom: 10px;
+
+        }
+
+        p {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        button {
+            border-radius: 4px;
+            width: 300px;
+        }
+    }
+}
