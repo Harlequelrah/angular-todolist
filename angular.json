@@ -51,11 +51,16 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "output": "/assets"
               }
             ],
             "styles": [
               "src/styles.scss",
-              "nodes_modules/boxicons/css/boxicons.min.css"
+              "node_modules/boxicons/css/boxicons.min.css"
             ],
             "scripts": []
           },
