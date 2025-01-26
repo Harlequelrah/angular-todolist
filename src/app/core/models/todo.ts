@@ -8,6 +8,10 @@ export class Todo {
         public date_creation: Date,
         public date_modification?: Date
 
-    ) {}
+    ) { }
+
+    changeStatus(): void{
+        this.est_fini = !this.est_fini;
+    }
 
 }

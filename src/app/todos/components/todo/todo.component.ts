@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Todo } from '../../../models/todo';
 import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
+import { Todo } from '../../../core/models/todo';
 
 @Component({
   selector: 'app-todo',

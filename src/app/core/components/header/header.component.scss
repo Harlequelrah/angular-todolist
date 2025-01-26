@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+
+    .navbar__link {
+        text-decoration: none;
+        background-color: lightgrey;
+        transition: transform 0.2s;
+        font: size 1.2em;
+        color: rgba(0, 0, 0, 0.5);
+        border-radius: 6px;
+        padding:10px;
+
+        &:hover {
+            transform: translateY(-5px);
+            text-decoration: underline;
+        }
+
+
+
+    }
+
+
+}

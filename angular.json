@@ -54,7 +54,8 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "nodes_modules/boxicons/css/boxicons.min.css"
             ],
             "scripts": []
           },
