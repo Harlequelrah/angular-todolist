@@ -1,13 +1,13 @@
-import { Component, Input } from '@angular/core';
+import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Todo } from '../../../core/models/todo';
 import { TodosService } from '../../../core/services/todos.service';
-import { NgStyle, NgClass, TitleCasePipe, DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-single-todo',
   standalone: true,
-  imports: [NgStyle,NgClass,TitleCasePipe,DatePipe],
+  imports: [NgStyle,TitleCasePipe,DatePipe],
   templateUrl: './single-todo.component.html',
   styleUrl: './single-todo.component.scss'
 })
