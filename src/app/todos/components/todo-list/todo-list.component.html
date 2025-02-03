@@ -1,5 +1,5 @@
 <div class="todo-container">
-  @for(todo of myTodos; track todo.id){
-  <app-todo [todo]="todo" />
-  }
+
+  <app-todo *ngFor="let todo of todos$ | async" [todo]="todo"></app-todo>
+
 </div>

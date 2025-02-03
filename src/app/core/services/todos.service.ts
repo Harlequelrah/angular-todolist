@@ -1,5 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Todo } from "../models/todo";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable(
     {
@@ -7,6 +9,12 @@ import { Todo } from "../models/todo";
     }
 )
 export class TodosService{
+
+    private  baseUrl: string = "http://localhost:8000/todos";
+
+    constructor(private http: HttpClient) { }
+
+    
 private todos = [
     new Todo(
         1,
@@ -57,8 +65,8 @@ private todos = [
 
 
 ]
-    getTodos(): Todo[] {
-    return [...this.todos]
+    getTodos(): Observable<Todo[]> {
+        return this.http.get<Todo[]>(`${this.baseUrl}/read-all`);
     }
     getTodo(id:number): Todo{
         const todo = this.todos.find(todo => todo.id == id);
