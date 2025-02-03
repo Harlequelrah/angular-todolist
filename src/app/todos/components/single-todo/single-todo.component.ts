@@ -1,4 +1,4 @@
-import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
+import { DatePipe, NgStyle, TitleCasePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Todo } from '../../../core/models/todo';
@@ -13,6 +13,7 @@ import { TodosService } from '../../../core/services/todos.service';
 })
 export class SingleTodoComponent {
   constructor(private todoService: TodosService, private route: ActivatedRoute) { }
+
 
   todo!: Todo;
   button_text!: "Commencer" | "Finir";

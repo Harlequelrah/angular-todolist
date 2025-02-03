@@ -68,5 +68,17 @@ private todos = [
         return todo;
 
     }
+    addTodo(formValue:{titre:string,description:string}): void
+    {
+        const todo: Todo = new Todo(
+            this.todos[this.todos.length - 1].id + 1,
+            formValue.titre,
+            formValue.description,
+            false,
+            new Date(),
+            new Date(),
+        );
+        this.todos.push(todo);
+    }
 
 }

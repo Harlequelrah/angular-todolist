@@ -1,0 +1,48 @@
+.form-card{
+    box-sizing : border-box;
+    width:50%;
+    margin : 20px auto;
+    padding:10px 30px;
+    box-shadow :  4px 4px 20px lightgray;
+
+    h2{
+        font-size:36px;
+        font-weight: bold;
+        text-decoration: underline;
+        text-shadow: 2px 2px 8px lightgrey;
+        text-align: center;
+    }
+
+    .form-group{
+        margin : 10px auto;
+        width:80%;
+        display : flex;
+        align-items:center;
+        justify-content:space-between;
+
+        input,textarea{
+            width:50%;
+        }
+
+
+
+
+    }
+    .action-buttons
+        {
+            width:100%;
+
+            button{
+                border:none;
+                outline:none;
+                transition : transform 0.2s ;
+                display:block;
+                margin : 20px auto;
+                box-shadow: 4px 4px 10px grey;
+                &:hover{
+                    transform: translateY(-5px);
+                }
+            }
+        }
+
+}

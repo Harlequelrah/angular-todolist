@@ -5,6 +5,8 @@ import { RegistrationPageComponent } from './auth/components/registration-page/r
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { SingleTodoComponent } from './todos/components/single-todo/single-todo.component';
 import { TodoListComponent } from './todos/components/todo-list/todo-list.component';
+import { NotfoundComponent } from './core/components/notfound/notfound.component';
+import { NewTodoComponent } from './todos/components/new-todo/new-todo.component';
 
 export const routes: Routes = [
     {
@@ -31,5 +33,13 @@ export const routes: Routes = [
     {
         path: 'about',
         component:AboutPageComponent
+    },
+    {
+        path: 'create',
+        component: NewTodoComponent
+    },
+    {
+        path: '**',
+        component: NotfoundComponent
     }
 ];
