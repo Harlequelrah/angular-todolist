@@ -2,7 +2,7 @@ import { AsyncPipe, DatePipe, NgIf, NgStyle, TitleCasePipe } from '@angular/comm
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { map, Observable, tap } from 'rxjs';
 import { Todo } from '../../../core/models/todo';
 import { TodosService } from '../../../core/services/todos.service';
 
@@ -27,25 +27,29 @@ export class NewTodoComponent implements OnInit {
     },
       {updateOn:'blur'}
     );
-    this.todoPreview$ = this.todoForm.valueChanges.pipe(
-      map(formValue => (
-        {
-          ...formValue,
-          id:0,
-          date_creation: new Date,
-          date_modification: new Date,
-          est_fini : false
-        }
-      ))
-    );
+    // this.todoPreview$ = this.todoForm.valueChanges.pipe(
+    //   map(formValue => (
+    //     {
+    //       ...formValue,
+    //       id:0,
+    //       date_creation: new Date,
+    //       date_modification: new Date,
+    //       est_fini : false
+    //     }
+    //   ))
+    // );
   }
 
 
   onAddTodo():void {
-    // console.log('Add new todo');
-    // console.log(this.todoForm.value);
-    this.todoService.addTodo(this.todoForm.value)
-    this.router.navigateByUrl('/todos');
+    this.todoService.addTodo(this.todoForm.value).pipe(
+      tap(
+        () => {
+          this.router.navigateByUrl('/todos')
+        }
+      )
+    ).subscribe();
+    // this.router.navigateByUrl('/todos');
   }
 
 

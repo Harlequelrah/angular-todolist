@@ -18,20 +18,3 @@
 
 
 </div>
-<div class="todo-container" *ngIf="todoPreview$ | async as todo">
-  <div class="todo-card">
-    <h1> Todo {{todo.id}} : {{todo.titre | titlecase}}</h1>
-    <h2>{{todo.description}}</h2>
-    <p>
-      Todo créé le {{todo.date_creation | date:'d MMMM YYYY , à HH:mm'}}
-    </p>
-    @if(todo.date_modification){
-    <p>
-      Todo Modifié le {{todo.date_modification | date : 'd MMMM YYYY , à HH:mm'}}
-    </p>
-    }
-    <p>Status : {{todo.est_fini?'Fini':'Commencé'}}</p>
-
-  </div>
-
-</div>
