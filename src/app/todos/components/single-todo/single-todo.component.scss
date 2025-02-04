@@ -42,10 +42,13 @@
             font-size: 0.9em;
             color: #666;
         }
-
-        button {
+        .button-actions{
+            button {
             border-radius: 4px;
-            width: 300px;
+            width: 50%;
+            // margin:4px 20px;
         }
+        }
+
     }
 }

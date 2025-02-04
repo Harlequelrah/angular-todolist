@@ -1,20 +1,25 @@
 <div class="todo-container">
-<div class="todo-card" *ngIf="todo$ | async as todo">
-  <h1> Todo {{todo.id}} : {{todo.titre | titlecase}}</h1>
-  <h2>{{todo.description}}</h2>
-  <p>
-    Todo créé le {{todo.date_creation | date:'d MMMM YYYY , à HH:mm'}}
-  </p>
-  @if(todo.date_modification){
-  <p>
-    Todo Modifié le {{todo.date_modification | date : 'd MMMM YYYY , à HH:mm'}}
-  </p>
-  }
-  <p>Status : {{todo.est_fini?'Fini':'Commencé'}}</p>
-  <button
-    [ngStyle]="{'background-color' : todo.est_fini ? 'lightgreen':'red' }">{{todo.est_fini? 'Commencé' : 'Fini'}}
-  </button>
+  <div class="todo-card" *ngIf="todo$ | async as todo">
+    <h1> Todo {{todo.id}} : {{todo.titre | titlecase}}</h1>
+    <h2>{{todo.description}}</h2>
+    <p>
+      Todo créé le {{todo.date_creation | date:'d MMMM YYYY , à HH:mm'}}
+    </p>
+    @if(todo.date_modification){
+    <p>
+      Todo Modifié le {{todo.date_modification | date : 'd MMMM YYYY , à HH:mm'}}
+    </p>
+    }
+    <p>Status : {{todo.est_fini?'Fini':'Commencé'}}</p>
+    <div class="button-actions">
+      <button (click)="onUpdateTodoStatut()" [ngStyle]="{'background-color' : todo.est_fini ? 'lightgreen':'crimson' }">{{button_text}}
+      </button>
+      <button (click)="onDeleteTodo()">
+        Supprimer
+      </button>
+    </div>
 
-</div>
+
+  </div>
 
 </div>

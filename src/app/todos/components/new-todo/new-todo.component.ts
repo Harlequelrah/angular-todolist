@@ -49,7 +49,6 @@ export class NewTodoComponent implements OnInit {
         }
       )
     ).subscribe();
-    // this.router.navigateByUrl('/todos');
   }
 
 

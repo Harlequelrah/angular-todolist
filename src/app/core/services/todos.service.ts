@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Todo } from "../models/todo";
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { map, Observable, switchMap } from "rxjs";
 
 @Injectable(
     {
@@ -9,6 +9,8 @@ import { Observable } from "rxjs";
     }
 )
 export class TodosService{
+
+
 
     private  baseUrl: string = "http://localhost:8000/todos";
 
@@ -25,6 +27,25 @@ export class TodosService{
     addTodo(formValue:{titre:string,description:string}): Observable<Todo>
     {
         return this.http.post<Todo>(`${this.baseUrl}/create`,formValue);
+    }
+    deteleTodo(todoId: number):Observable<void> {
+        return this.http.delete<void>(`${this.baseUrl}/delete/${todoId}`);
+    }
+
+    updateTodoStatutById(todoId: number):Observable<Todo> {
+        return this.getTodo(todoId).pipe(
+            map((todo) => {
+                todo.est_fini = !todo.est_fini;
+                return todo;
+                // console.log(todo);
+                // console.log(todo instanceof (Todo));
+                // return todo.changeStatus();
+            }),
+            switchMap(
+                updateTodo=>
+                this.http.put<Todo>(`${this.baseUrl}/update/${todoId}`,updateTodo)
+            )
+        );
     }
 
 }
