@@ -1,13 +1,13 @@
 <div class="form-container">
   <div class="form-wrapper">
-    <form action="">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
       <h1>Connexion</h1>
       <div class="input-box">
-        <input type="text" placeholder="Username" required>
+        <input type="text" placeholder="Username" formControlName="username">
         <i class='bx bxs-user'></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Password" formControlName="password">
         <i class='bx bxs-lock'></i>
       </div>
       <div class="remember-forgot">
