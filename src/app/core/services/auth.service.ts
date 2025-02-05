@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { Observable, switchMap, tap } from "rxjs";
 import { environment } from "../../environements/environnement";
 import { Token } from "../models/token/token";
+import { Credentials } from "../types/credentials.type";
 
 
 @Injectable({
@@ -10,14 +11,25 @@ import { Token } from "../models/token/token";
 })
 export class AuthService {
 
+    public existToken(): boolean{
+        return (localStorage.getItem("access_token") != null);
+    }
+    public logout() {
+        localStorage.removeItem("access_token");
+        localStorage.removeItem("refresh_token");
+
+    }
+
     private apiUrl: string = environment.apiUrl;
     private  baseUrl: string = `${this.apiUrl}/users`;
     constructor(private http: HttpClient) { }
-    public login(userLoginRequest: { username: string, password: string }): Observable<Token> {
+    public login(userLoginRequest:Credentials): Observable<Token> {
         return this.http.post<Token>(`${this.baseUrl}/login`, userLoginRequest).pipe(
             tap((response:any) => {
                 localStorage.setItem('access_token', response.access_token);
-                localStorage.setItem('refresh_token', response.refresh_token);
+                if (userLoginRequest.stayLoggedIn) {
+                    localStorage.setItem('refresh_token', response.refresh_token);
+                }
             })
         );
     }
@@ -28,7 +40,13 @@ export class AuthService {
             () => {
                 const username: string = formValue.username;
                 const password: string = formValue.password;
-                return this.login({ username, password });
+                const credentials :Credentials= {
+                        username: username,
+                        password: password,
+                        stayLoggedIn:true
+                }
+
+                return this.login(credentials);
             }
             )
         );

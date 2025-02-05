@@ -13,13 +13,26 @@ https://github.com/Harlequelrah/fastapi_todolist
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## ScreenShots
-
+### `LandingPage`
 ![LandingPage](screenshots/screenshot_1.png)
-![AboutPage](screenshots/screenshot_2.png)
-![TodosPage](screenshots/screenshot_3.png)
-![LoginPage](screenshots/screenshot_4.png)
-![LoginPage](screenshots/screenshot_5.png)
 
+### `AboutPage`
+![AboutPage](screenshots/screenshot_2.png)
+
+### `TodosPage`
+![TodosPage](screenshots/screenshot_3.png)
+
+### `LoginPage`
+![LoginPage](screenshots/screenshot_4.png)
+
+### `TodoPage`
+![TodoPage](screenshots/screenshot_5.png)
+
+### `RegistrationPage`
+![RegistrationPage](screenshots/screenshot_6.png)
+
+### `NewTodoPage`
+![NewTodoPage](screenshots/screenshot_7.png)
 
 
 

@@ -1,10 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
-import { LoginPageComponent } from './components/login-page/login-page.component';
 import { AuthRoutingModule } from './auth-routing.module';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 
 
 
@@ -22,7 +22,6 @@ import { AuthRoutingModule } from './auth-routing.module';
   exports: [
     RegistrationPageComponent,
     LoginPageComponent,
-    AuthRoutingModule
   ],
 })
 export class AuthModule { }

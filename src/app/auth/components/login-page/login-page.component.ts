@@ -15,7 +15,8 @@ export class LoginPageComponent implements OnInit{
   ngOnInit(): void {
     this.loginForm=this.formBuilder.group({
       username: ['',Validators.required],
-      password: ['',Validators.required],
+      password: ['', Validators.required],
+      stayLoggedIn:[false]
     });
   }
   onSubmitLoginForm(): void{
