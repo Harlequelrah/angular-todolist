@@ -1,14 +1,12 @@
 import { Routes } from '@angular/router';
-import { AboutPageComponent } from './about-page/about-page.component';
+import { AboutPageComponent } from './about-page/components/about-page.component';
 import { LoginPageComponent } from './auth/components/login-page/login-page.component';
 import { RegistrationPageComponent } from './auth/components/registration-page/registration-page.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
-import { SingleTodoComponent } from './todos/components/single-todo/single-todo.component';
-import { TodoListComponent } from './todos/components/todo-list/todo-list.component';
 import { NotfoundComponent } from './core/components/notfound/notfound.component';
-import { NewTodoComponent } from './todos/components/new-todo/new-todo.component';
+import { LandingPageComponent } from './landing-page/components/landing-page.component';
 
 export const routes: Routes = [
+
     {
         path: '',
         component: LoginPageComponent
@@ -17,27 +15,21 @@ export const routes: Routes = [
         path: 'accueil',
         component: LandingPageComponent
     },
-    {
-        path: 'todos/:id',
-        component: SingleTodoComponent
-    },
-    {
-        path: 'todos',
-        component: TodoListComponent
-    },
+
 
     {
         path: 'register',
-        component:RegistrationPageComponent
+        component: RegistrationPageComponent
     },
     {
         path: 'about',
-        component:AboutPageComponent
+        component: AboutPageComponent
     },
     {
-        path: 'create',
-        component: NewTodoComponent
+        path: 'todos',
+        loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule)
     },
+
     {
         path: '**',
         component: NotfoundComponent

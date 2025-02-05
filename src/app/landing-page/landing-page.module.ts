@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LandingPageComponent } from './landing-page.component';
+import { LandingPageComponent } from './components/landing-page.component';
 
 
 

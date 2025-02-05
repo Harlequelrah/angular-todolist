@@ -1,27 +1,37 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { LOCALE_ID, NgModule, provideZoneChangeDetection } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingPageModule } from './landing-page/landing-page.module';
-import { TodosModule } from './todos/todos.module';
+import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
+import { LandingPageModule } from './landing-page/landing-page.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     CommonModule,
-    RouterModule,
+    AuthModule,
+    BrowserModule,
+    // RouterModule,
     LandingPageModule,
-    TodosModule,
     CoreModule,
+    RouterOutlet
   ],
+  bootstrap: [AppComponent],
   providers: [
-    NgIf
-  ]
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHttpClient(withInterceptorsFromDi()),
+    {
+      provide: LOCALE_ID, useValue: 'fr-FR'
+    },
 
+  ]
 
 })
 export class AppModule { }

@@ -6,8 +6,6 @@ import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
-  standalone: true,
-  imports: [ReactiveFormsModule,RouterLink],
   templateUrl: './login-page.component.html',
   styleUrl: '../../styles/form-style.scss'
 })

@@ -7,8 +7,6 @@ import { tap } from 'rxjs';
 
 @Component({
   selector: 'app-registration-page',
-  standalone: true,
-  imports: [ReactiveFormsModule,NgIf],
   templateUrl: './registration-page.component.html',
   styleUrl: '../../styles/form-style.scss'
 })

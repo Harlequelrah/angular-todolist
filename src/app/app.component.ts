@@ -1,8 +1,6 @@
-import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { HeaderComponent } from './core/components/header/header.component';
 
 @Component({
   selector: 'app-root',
