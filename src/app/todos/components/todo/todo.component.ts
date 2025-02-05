@@ -1,12 +1,9 @@
-import { DatePipe, NgClass, NgStyle, TitleCasePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { Todo } from '../../../core/models/todo';
 import { Router } from '@angular/router';
+import { Todo } from '../../../core/models/todo';
 
 @Component({
   selector: 'app-todo',
-  standalone: true,
-  imports: [NgClass,TitleCasePipe],
   templateUrl: './todo.component.html',
   styleUrl: './todo.component.scss'
 })

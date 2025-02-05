@@ -6,8 +6,6 @@ import { HeaderComponent } from './core/components/header/header.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent, NgIf,AsyncPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

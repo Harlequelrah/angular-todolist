@@ -1,15 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TodoComponent } from '../todo/todo.component';
+import { Observable } from 'rxjs';
 import { Todo } from '../../../core/models/todo';
 import { TodosService } from '../../../core/services/todos.service';
-import { interval, Observable, Subject, takeUntil, tap } from 'rxjs';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
 
 
 @Component({
   selector: 'app-todo-list',
-  standalone: true,
-  imports: [TodoComponent,AsyncPipe,NgIf,NgFor],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.scss'
 })

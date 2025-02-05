@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { AccessToken } from "../models/token/accessToken";
 import { RefreshToken } from "../models/token/refreshToken";
-import { map, Observable, tap } from "rxjs";
+import { exhaustMap, map, Observable, switchMap, tap } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { Token } from "../models/token/token";
 
@@ -27,9 +27,18 @@ export class AuthService {
         );
     }
 
-    // register(formValue: {username:string,password:string,firstname:string,lastname:string,email:string}) {
-    //     return this.http.post(`${this.baseUrl}/create`)
-    //         ;    }
+    register(formValue: { username: string, password: string, firstname: string, lastname: string, email: string }):Observable<Token> {
+        return this.http.post(`${this.baseUrl}/create`, formValue).pipe(
+            switchMap(
+            () => {
+                const username: string = formValue.username;
+                const password: string = formValue.password;
+                return this.login({ username, password });
+            }
+            )
+        );
+
+    }
 
     public getAccessToken(): string {
         return this.access_token;

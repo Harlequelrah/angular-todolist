@@ -37,9 +37,6 @@ export class TodosService{
             map((todo) => {
                 todo.est_fini = !todo.est_fini;
                 return todo;
-                // console.log(todo);
-                // console.log(todo instanceof (Todo));
-                // return todo.changeStatus();
             }),
             switchMap(
                 updateTodo=>
