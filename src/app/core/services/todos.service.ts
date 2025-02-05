@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { Todo } from "../models/todo";
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, switchMap } from "rxjs";
+import { environment } from "../../environements/environnement";
 
 @Injectable(
     {
@@ -10,9 +11,8 @@ import { map, Observable, switchMap } from "rxjs";
 )
 export class TodosService{
 
-
-
-    private  baseUrl: string = "http://localhost:8000/todos";
+    private apiUrl: string = environment.apiUrl;
+    private  baseUrl: string = `${this.apiUrl}/todos`;
 
     constructor(private http: HttpClient) { }
 

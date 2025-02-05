@@ -8,7 +8,7 @@ export class AuthInterceptor implements HttpInterceptor
 {
     constructor(private auth : AuthService){}
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        const access_token: string = this.auth.getAccessToken();
+        const access_token = localStorage.getItem('access_token');
         if (access_token != null)
         {
             const headers = new HttpHeaders()

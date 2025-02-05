@@ -4,6 +4,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { AuthRoutingModule } from './auth-routing.module';
 
 
 
@@ -16,10 +17,12 @@ import { LoginPageComponent } from './components/login-page/login-page.component
     CommonModule,
     ReactiveFormsModule,
     RouterLink,
+    AuthRoutingModule
   ],
   exports: [
     RegistrationPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    AuthRoutingModule
   ],
 })
 export class AuthModule { }
